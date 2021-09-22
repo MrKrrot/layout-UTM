@@ -1,48 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>P&B UI by RCV - Simple</title>
-
-    <link href="./style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
-</head>
-<body>
-<div id="overlay">
-    <img src="overlay.png" alt="overlay" style="z-index: 100;" />
-    <img src="underlay.png" alt="underlay" style="z-index: -100;" />
-
-    <div id="bar">
-        <div class="blue text flex-vcenter">
-            <span class="big-text" id="blue_name">TEAM 1</span>
-        </div>
-        <div class="blue timer flex-vcenter">
-            <span class="big-text" id="blue_timer">:00</span>
-        </div>
-        <div class="middle">
-            <div class="top flex-vcenter">
-                <span class="score-text" id="score">0 - 0</span>
+<html lang="es">
+    <head>
+        <title>UTamLeague Overlay</title>
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header" id="header__container">
+            <div class="header__blue-container header__blue--hidden" id="header__blue">
+                <img class="header__blue-logo team-logo" id="blue_logo" src="img/Logo_Blue.png" alt="Logo Equipo Azul">
+                <span class="header__blue-name" id="blue_name"></span>
+                <span class="header__blue-score" id="blue_score"></span>
             </div>
-            <div class="bot flex-vcenter">
-                <span class="phase-text" id="phase">PICK PHASE 2</span>
+            <div class="header__timer-container header__timer--hidden" id="header__timer">
+                <span class="timer-container__patch" id="patch"></span>
+                <span class="timer-container__timer" id="timer"></span>
+                <span class="timer-container__phase" id="phase"></span>
             </div>
-        </div>
-        <div class="red timer flex-vcenter">
-            <span class="big-text" id="red_timer">:00</span>
-        </div>
-        <div class="red text flex-vcenter">
-            <span class="big-text" id="red_name">TEAM 2</span>
-        </div>
-    </div>
+            <div class="header__red-container header__red--hidden" id="header__red">
+                <span class="header__red-score" id="red_score"></span>
+                <span class="header__red-name" id="red_name"></span>
+                <img class="header__red-logo team-logo" id="red_logo" src="img/Logo_Red.png" alt="Logo Equipo Rojo">
+            </div>
+        </header>
+        <main class="main">
+            <ul class="picks_blue picks picks__hidden" id="picks_blue"></ul>
+            <ul class="picks_red picks picks__hidden" id="picks_red"></ul>
+        </main>
+        <footer class="footer" id="footer">
+            <ul class="bans_blue bans bans__hidden" id="bans_blue"></ul>
+            <ul class="bans_red bans bans__hidden" id="bans_red"></ul>
+        </footer>
 
-    <div class="picks blue" id="picks_blue"></div>
-    <div class="picks red" id="picks_red"></div>
-
-    <div class="bans blue" id="bans_blue"></div>
-    <div class="bans red" id="bans_red"></div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="../../frontend/frontend-lib.js"></script>
-<script src="./script.js"></script>
-</body>
+        <script src="../../frontend/frontend-lib.js"></script>
+        <script src="./script.js"></script>
+    </body>
 </html>
